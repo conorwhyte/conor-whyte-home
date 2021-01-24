@@ -1,0 +1,19 @@
+.search {
+    position: relative;
+    flex-grow: 1;
+
+    input {
+        padding: 0 16px;
+        border-radius: 100px;
+        border: 1px solid var(--gray-90);
+        width: 90%;
+        max-width: 330px;
+        height: 100%;
+        outline-style: none;
+    }
+
+    input:focus {
+        box-shadow: var(--outline-box-shadow);
+    }
+}
+     

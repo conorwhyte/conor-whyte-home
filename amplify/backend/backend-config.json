@@ -1,6 +1,6 @@
 {
   "auth": {
-    "conorwhytehome21b685b3": {
+    "conorwhytehome7b1a3aeb": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -8,7 +8,7 @@
     }
   },
   "api": {
-    "conorwhyteHomeAPI": {
+    "conorwhytehome": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authconorwhytehome21b685b3"
+              "userPoolId": "authconorwhytehome7b1a3aeb"
             }
           },
           "additionalAuthenticationProviders": []
@@ -28,7 +28,7 @@
     "amplifyhosting": {
       "service": "amplifyhosting",
       "type": "cicd",
-      "lastPushTimeStamp": "2020-12-23T00:05:58.361Z"
+      "lastPushTimeStamp": "2020-12-23T15:47:05.615Z"
     }
   }
 }

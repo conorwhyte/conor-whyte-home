@@ -1,0 +1,29 @@
+.col {
+  height: 100%;
+}
+
+.sidebar {
+  background: var(--white);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  flex-shrink: 0;
+  max-width: 350px;
+  min-width: 250px;
+  width: 30%;
+
+  &Header {
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding-block: 36px 16px;
+    padding-inline: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  &Menu {
+    padding-inline: 16px;
+    padding-block: 0 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

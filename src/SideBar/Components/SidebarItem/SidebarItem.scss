@@ -1,0 +1,102 @@
+.sidebar-note {
+  &-list-item {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 16px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-height: 100px;
+    transition: max-height 250ms ease-out;
+    transform: scale(1);
+
+    .note-expanded {
+      max-height: 300px;
+      transition: max-height 0.5s ease;
+    }
+  }
+
+  &-open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    border: none;
+    border-radius: 6px;
+    text-align: start;
+    background: var(--gray-95);
+    cursor: pointer;
+    outline-style: none;
+    color: transparent;
+    font-size: 0px;
+  }
+
+  &-open:focus {
+    box-shadow: var(--outline-box-shadow);
+  }
+
+  &-open:hover {
+    background: var(--gray-90);
+  }
+
+  &-header {
+    z-index: 1;
+    max-width: 85%;
+    pointer-events: none;
+
+    > strong {
+      display: block;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-toggle-expand {
+    z-index: 2;
+    border-radius: 50%;
+    height: 24px;
+    border: 1px solid var(--gray-60);
+    cursor: pointer;
+    flex-shrink: 0;
+    visibility: hidden;
+    opacity: 0;
+    cursor: default;
+    transition: visibility 0s linear 20ms, opacity 300ms;
+    outline-style: none;
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &-toggle-expand:focus {
+    box-shadow: var(--outline-box-shadow);
+  }
+
+  &-excerpt {
+    pointer-events: none;
+    z-index: 2;
+    flex: 1 1 250px;
+    color: var(--secondary-text);
+    position: relative;
+    animation: slideIn 100ms;
+  }
+}
+
+.sidebar-note-open:hover + .sidebar-note-toggle-expand,
+.sidebar-note-open:focus + .sidebar-note-toggle-expand,
+.sidebar-note-toggle-expand:hover,
+.sidebar-note-toggle-expand:focus {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}

@@ -1,0 +1,1 @@
+export const getProjectList = (state) => state.list;
