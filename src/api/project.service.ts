@@ -7,10 +7,6 @@ import {
 import { createProject } from '../graphql/mutations';
 import { GetProjectQuery, ListProjectsQuery } from '../API';
  
-const callEndpoint = async (query: any, variables: any) => {
-    return await API.graphql(graphqlOperation(query, variables));
-};
-
 export const listProjects = async () => {
     const result = await API.graphql(graphqlOperation(listProjectQuery)) as GraphQLResult<ListProjectsQuery>;
 
@@ -25,12 +21,11 @@ export const getProject = async (id: string) => {
     return result?.data?.getProject;
 };
 
-export const addProject = async () => {
-    const createEstimateInput = {
-      name: 'Conor Test',
-      date: '10th November',
-      description: 'This is a test',
+export const addProject = async (title: string, body: string) => {
+    const input = {
+        title,
+        body,
     };
     
-    return await callEndpoint(createProject, {input: createEstimateInput});
+    return await API.graphql(graphqlOperation(createProject, {input}));
 }

@@ -1,15 +1,13 @@
 import './ProjectEditor.scss';
 
-export default function EditorMenu({noteId}) {
+export default function EditorMenu({noteId, saveAction}) {
   const isDraft = noteId === null;
 
   return (
     <div className="note-editor-menu" role="menubar">
         <button
             className="note-editor-done"
-            onClick={() => null
-                // handle save
-            }
+            onClick={saveAction}
             role="menuitem"
         >
             <img

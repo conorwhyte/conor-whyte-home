@@ -1,11 +1,11 @@
 import styles from './ProjectList.module.scss';
-import SidebarNote from './SidebarItem/SidebarItem';
+import SidebarItem from './SidebarItem/SidebarItem';
 
 const ProjectList = ({ projects }) => (
     <ul className={styles.projectsList}>
-        {projects.map((note) => (
-            <li key={note.id}>
-                <SidebarNote note={note} />
+        {projects.map((project) => (
+            <li key={project.id}>
+                <SidebarItem project={project} />
             </li>
         ))}
     </ul>

@@ -4,15 +4,13 @@
 
 export type CreateProjectInput = {
   id?: string | null,
-  name: string,
-  date: string,
-  description: string,
+  title: string,
+  body: string,
 };
 
 export type ModelProjectConditionInput = {
-  name?: ModelStringInput | null,
-  date?: ModelStringInput | null,
-  description?: ModelStringInput | null,
+  title?: ModelStringInput | null,
+  body?: ModelStringInput | null,
   and?: Array< ModelProjectConditionInput | null > | null,
   or?: Array< ModelProjectConditionInput | null > | null,
   not?: ModelProjectConditionInput | null,
@@ -60,9 +58,8 @@ export type ModelSizeInput = {
 
 export type UpdateProjectInput = {
   id: string,
-  name?: string | null,
-  date?: string | null,
-  description?: string | null,
+  title?: string | null,
+  body?: string | null,
 };
 
 export type DeleteProjectInput = {
@@ -71,9 +68,8 @@ export type DeleteProjectInput = {
 
 export type ModelProjectFilterInput = {
   id?: ModelIDInput | null,
-  name?: ModelStringInput | null,
-  date?: ModelStringInput | null,
-  description?: ModelStringInput | null,
+  title?: ModelStringInput | null,
+  body?: ModelStringInput | null,
   and?: Array< ModelProjectFilterInput | null > | null,
   or?: Array< ModelProjectFilterInput | null > | null,
   not?: ModelProjectFilterInput | null,
@@ -104,9 +100,8 @@ export type CreateProjectMutation = {
   createProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -121,9 +116,8 @@ export type UpdateProjectMutation = {
   updateProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -138,9 +132,8 @@ export type DeleteProjectMutation = {
   deleteProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -154,9 +147,8 @@ export type GetProjectQuery = {
   getProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -174,9 +166,8 @@ export type ListProjectsQuery = {
     items:  Array< {
       __typename: "Project",
       id: string,
-      name: string,
-      date: string,
-      description: string,
+      title: string,
+      body: string,
       createdAt: string,
       updatedAt: string,
     } | null > | null,
@@ -188,9 +179,8 @@ export type OnCreateProjectSubscription = {
   onCreateProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -200,9 +190,8 @@ export type OnUpdateProjectSubscription = {
   onUpdateProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -212,9 +201,8 @@ export type OnDeleteProjectSubscription = {
   onDeleteProject:  {
     __typename: "Project",
     id: string,
-    name: string,
-    date: string,
-    description: string,
+    title: string,
+    body: string,
     createdAt: string,
     updatedAt: string,
   } | null,

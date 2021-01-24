@@ -9,9 +9,8 @@ export const createProject = /* GraphQL */ `
   ) {
     createProject(input: $input, condition: $condition) {
       id
-      name
-      date
-      description
+      title
+      body
       createdAt
       updatedAt
     }
@@ -24,9 +23,8 @@ export const updateProject = /* GraphQL */ `
   ) {
     updateProject(input: $input, condition: $condition) {
       id
-      name
-      date
-      description
+      title
+      body
       createdAt
       updatedAt
     }
@@ -39,9 +37,8 @@ export const deleteProject = /* GraphQL */ `
   ) {
     deleteProject(input: $input, condition: $condition) {
       id
-      name
-      date
-      description
+      title
+      body
       createdAt
       updatedAt
     }

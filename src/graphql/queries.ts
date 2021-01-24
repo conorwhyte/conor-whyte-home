@@ -6,9 +6,8 @@ export const getProject = /* GraphQL */ `
   query GetProject($id: ID!) {
     getProject(id: $id) {
       id
-      name
-      date
-      description
+      title
+      body
       createdAt
       updatedAt
     }
@@ -23,9 +22,7 @@ export const listProjects = /* GraphQL */ `
     listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        date
-        description
+        title
         createdAt
         updatedAt
       }
