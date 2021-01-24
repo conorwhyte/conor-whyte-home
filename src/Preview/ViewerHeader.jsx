@@ -1,17 +1,17 @@
-// import { format } from 'date-fns';
+import { format } from 'date-fns';
 import styles from './Viewer.module.scss';
 
-export default function NoteHeader({note}) {
-    const {title, updated_at} = note;
-    // const updatedAt = new Date(updated_at);
+export default function NoteHeader({project}) {
+    const { name, updatedAt } = project;
+    const updatedDate = new Date(updatedAt);
 
     return (
         <div className={styles.noteHeader}>
-            <h1 className={styles.noteTitle}>{title}</h1>
+            <h1 className={styles.noteTitle}>{name}</h1>
             <div className={styles.noteMenu} role="menubar">
-            {/* <small className={styles.noteUpdatedAt} role="status">
-                Last updated on {format(updatedAt, "d MMM yyyy 'at' h:mm bb")}
-            </small> */}
+            <small className={styles.noteUpdatedAt} role="status">
+                Last updated on {format(updatedDate, "d MMM yyyy 'at' h:mm bb")}
+            </small>
             {/* <EditButton noteId={id}>Edit</EditButton> */}
             </div>
         </div>

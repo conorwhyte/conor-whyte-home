@@ -13,9 +13,7 @@ const App = () => (
   <div className="App">
     <Store>
       <SidePanel />
-      <section className="col note-viewer ">
-        <Viewer />
-      </section>
+      <Viewer />
     </Store>  
   </div>
 );

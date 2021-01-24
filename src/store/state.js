@@ -1,4 +1,4 @@
-import { ADD_PROJECTS } from './actions';
+import { ADD_PROJECTS, ADD_SELECTED_ID } from './actions';
 
 export const initialState = {
     list: [],
@@ -10,11 +10,16 @@ export const initialState = {
 export function Reducer(state, action) {
   switch (action.type) {
     case ADD_PROJECTS:
-      return {
+        return {
             ...state,
             list: action.projects,
-       };
+        };
+    case ADD_SELECTED_ID:
+        return {
+            ...state,
+            selectedId: action.id,
+        };
     default:
-      throw new Error();
+      throw new Error('Unknown action');
   }
 }

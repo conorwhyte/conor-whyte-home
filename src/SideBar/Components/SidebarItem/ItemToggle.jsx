@@ -1,9 +1,11 @@
 import { useRef, useEffect } from 'react';
 import { useLocation } from '../../../utils/LocationContext.js';
+import { getSelectedId } from '../../../store/selectors';
+import { addSelectedId } from '../../../store/actions.js';
 
 export default function ItemToggle({id, title, isExpanded, setIsExpanded}) {
-  const [location, setLocation] = useLocation();
-  const isActive = id === location.selectedId;
+  const [state, dispatch] = useLocation();
+  const isActive = id === getSelectedId(state);
   const prevTitleRef = useRef(title);
   
   useEffect(() => {
@@ -25,11 +27,7 @@ export default function ItemToggle({id, title, isExpanded, setIsExpanded}) {
             : '1px solid transparent',
         }}
         onClick={() => {
-            // setLocation((loc) => ({
-            //   selectedId: id,
-            //   isEditing: false,
-            //   searchText: loc.searchText,
-            // }));
+          dispatch(addSelectedId(id));
         }}>
       </button>
       <button

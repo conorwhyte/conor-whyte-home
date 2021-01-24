@@ -20,8 +20,6 @@ const SidePanel = () => {
         listProjects().then(addProjectsStore);
     }, [addProjectsStore]);
 
-    console.log(state);
-
     return (
         <section className={`${styles.col} ${styles.sidebar}`}>
             <section className={styles.sidebarHeader}>
