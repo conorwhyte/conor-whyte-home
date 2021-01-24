@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from 'react'; 
 import SearchInput from './Components/SearchInput';
-import ProjectList from './ProjectList';
+import ProjectList from './Components/ProjectList';
+import EditButton from '../Components/EditButton';
 import styles from './SidePanel.module.scss';
 import { useLocation } from '../utils/LocationContext.js';
 import { addProjects, } from '../store/actions';
@@ -27,6 +28,7 @@ const SidePanel = () => {
             </section>
             <section className={styles.sidebarMenu} role="menubar">
                 <SearchInput />
+                <EditButton noteId={null} text={'Add'} />
             </section>
             <nav>
                 <ProjectList projects={projects} />

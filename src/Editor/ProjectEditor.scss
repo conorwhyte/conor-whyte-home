@@ -1,0 +1,112 @@
+.note-editor {
+    background: var(--white);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 58px;
+    overflow-y: auto;
+  }
+  .note-editor .label {
+    margin-bottom: 20px;
+  }
+  .note-editor-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+  }
+  .note-editor-form input,
+  .note-editor-form textarea {
+    background: none;
+    border: 1px solid var(--gray-70);
+    border-radius: 2px;
+    font-family: var(--monospace);
+    font-size: 0.8rem;
+    padding: 12px;
+    outline-style: none;
+  }
+  .note-editor-form input:focus,
+  .note-editor-form textarea:focus {
+    box-shadow: var(--outline-box-shadow);
+  }
+  .note-editor-form input {
+    height: 44px;
+    margin-bottom: 16px;
+  }
+  .note-editor-form textarea {
+    height: 100%;
+    max-width: 400px;
+  }
+  .note-editor-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .note-editor-preview {
+    margin-inline-start: 40px;
+    width: 100%;
+  }
+  .note-editor-done,
+  .note-editor-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 100px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-block: 6px 8px;
+    padding-inline: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-inline-start: 12px;
+    outline-style: none;
+    transition: all 0.2s ease-in-out;
+  }
+  .note-editor-done:disabled,
+  .note-editor-delete:disabled {
+    opacity: 0.5;
+  }
+  .note-editor-done {
+    border: none;
+    background: var(--primary-blue);
+    color: var(--white);
+  }
+  .note-editor-done:focus {
+    box-shadow: var(--outline-box-shadow-contrast);
+  }
+  .note-editor-done:hover:not([disabled]) {
+    background: var(--secondary-blue);
+  }
+  .note-editor-delete {
+    border: 1px solid var(--red-25);
+    background: var(--white);
+    color: var(--red-25);
+  }
+  .note-editor-delete:focus {
+    box-shadow: var(--outline-box-shadow);
+  }
+  .note-editor-delete:hover:not([disabled]) {
+    background: var(--red-25);
+    color: var(--white);
+  }
+  /* Hack to color our svg */
+  .note-editor-delete:hover:not([disabled]) img {
+    filter: grayscale(1) invert(1) brightness(2);
+  }
+  .note-editor-done > img {
+    width: 14px;
+  }
+  .note-editor-delete > img {
+    width: 10px;
+  }
+  .note-editor-done > img,
+  .note-editor-delete > img {
+    margin-inline-end: 12px;
+  }
+  .note-editor-done[disabled],
+  .note-editor-delete[disabled] {
+    opacity: 0.5;
+  }

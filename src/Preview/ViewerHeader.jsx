@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import EditButton from '../Components/EditButton';
 import styles from './Viewer.module.scss';
 
 export default function NoteHeader({project}) {
@@ -9,10 +10,10 @@ export default function NoteHeader({project}) {
         <div className={styles.noteHeader}>
             <h1 className={styles.noteTitle}>{name}</h1>
             <div className={styles.noteMenu} role="menubar">
-            <small className={styles.noteUpdatedAt} role="status">
-                Last updated on {format(updatedDate, "d MMM yyyy 'at' h:mm bb")}
-            </small>
-            {/* <EditButton noteId={id}>Edit</EditButton> */}
+                <small className={styles.noteUpdatedAt} role="status">
+                    Last updated on {format(updatedDate, "d MMM yyyy 'at' h:mm bb")}
+                </small>
+                <EditButton noteId={'id'} text={'Edit'} />
             </div>
         </div>
     );

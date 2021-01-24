@@ -1,5 +1,5 @@
 import styles from './ProjectList.module.scss';
-import SidebarNote from './Components/SidebarItem/SidebarItem';
+import SidebarNote from './SidebarItem/SidebarItem';
 
 const ProjectList = ({ projects }) => (
     <ul className={styles.projectsList}>
