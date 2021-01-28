@@ -4,7 +4,7 @@ import {
     getProject as getProjectQuery,
     listProjects as listProjectQuery,
 } from '../graphql/queries';
-import { createProject } from '../graphql/mutations';
+import { createProject, deleteProject, updateProject } from '../graphql/mutations';
 import { GetProjectQuery, ListProjectsQuery } from '../API';
  
 export const listProjects = async () => {
@@ -22,10 +22,21 @@ export const getProject = async (id: string) => {
 };
 
 export const addProject = async (title: string, body: string) => {
-    const input = {
-        title,
-        body,
-    };
-    
+    const input = { title, body };
+
     return await API.graphql(graphqlOperation(createProject, {input}));
-}
+};
+
+export const updateProjectForId = async (title: string, body: string, id: string) => {
+    const input = { title, body, id };
+
+    return await API.graphql(graphqlOperation(updateProject, {input}));
+};
+
+export const deleteProjectForId = async (id: string) => {
+    const input = { id };
+
+    console.log(id);
+    
+    return await API.graphql(graphqlOperation(deleteProject, {input}));
+};

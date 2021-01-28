@@ -1,18 +1,39 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import NotePreview from '../Preview/ViewerText';
 import EditorMenu from './EditorMenu';
 import EditorForm from './EditorForm';
-import { addProject } from '../api/project.service';
+import { 
+    addProject, 
+    getProject, 
+    updateProjectForId 
+} from '../api/project.service';
+import { useLocation } from '../utils/LocationContext';
+import { getSelectedId } from '../store/selectors';
 import './ProjectEditor.scss';
 
-export default function ProjectEditor({noteId, initialTitle, initialBody}) {
-  const [title, setTitle] = useState(initialTitle);
-  const [body, setBody] = useState(initialBody);
+export default function ProjectEditor({initialTitle, initialBody}) {
+  const [ state ] = useLocation();
+  const [ title, setTitle ] = useState(initialTitle);
+  const [ body, setBody ] = useState(initialBody);
+  const projectId = getSelectedId(state); 
 
   const saveAction = () => {
-    addProject(title, body);
+    if (projectId) {
+        updateProjectForId(title, body, projectId);
+    } else {
+        addProject(title, body);
+    }
   };
 
+  useEffect(() => {
+    getProject(projectId).then(project => {
+        const { body, title } = project;
+        
+        setBody(body);
+        setTitle(title);
+    });
+  }, [projectId]);
+  
   return (
     <div className="note-editor">
         <EditorForm 
@@ -23,7 +44,7 @@ export default function ProjectEditor({noteId, initialTitle, initialBody}) {
         />
       
       <div className="note-editor-preview">
-        <EditorMenu noteId={noteId} saveAction={saveAction} />
+        <EditorMenu projectId={projectId} saveAction={saveAction} />
         
         <div className="label label--preview" role="status">
           Preview

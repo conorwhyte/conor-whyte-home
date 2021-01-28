@@ -1,7 +1,8 @@
+import { deleteProjectForId } from '../api/project.service';
 import './ProjectEditor.scss';
 
-export default function EditorMenu({noteId, saveAction}) {
-  const isDraft = noteId === null;
+export default function EditorMenu({projectId, saveAction}) {
+  const isDraft = projectId === null;
 
   return (
     <div className="note-editor-menu" role="menubar">
@@ -23,9 +24,7 @@ export default function EditorMenu({noteId, saveAction}) {
         {!isDraft && (
             <button
                 className="note-editor-delete"
-                onClick={() =>  null
-                    // handle delete
-                }
+                onClick={() => deleteProjectForId(projectId)}
                 role="menuitem"
             >
                 <img

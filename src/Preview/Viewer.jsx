@@ -5,18 +5,31 @@ import ProjectEditor from '../Editor/ProjectEditor';
 import styles from './Viewer.module.scss';
 import { getProject } from '../api/project.service';
 import { useLocation } from '../utils/LocationContext.js';
-import { getSelectedId } from '../store/selectors';
+import { 
+    getIsEditing, 
+    getSelectedId 
+} from '../store/selectors';
 
 export default function Viewer() {
     const [ state ] = useLocation(); 
     const [ project, setProject ] = useState();
     const selectedId = getSelectedId(state);
+    const isEditing = getIsEditing(state);
 
     useEffect(() => {
         if (selectedId) {
             getProject(selectedId).then(setProject);
         }
-    }, [selectedId])
+    }, [selectedId]);
+
+    if (isEditing) {
+        return (
+            <ProjectEditor 
+                initialTitle="Untitled" 
+                initialBody="" 
+            />
+        );
+    }
     
     return project ? (
         <section className={styles.noteViewer}>
@@ -26,5 +39,5 @@ export default function Viewer() {
                 <ViewerText body={project.body} />
             </div>
         </section>
-    ) : <ProjectEditor noteId={null} initialTitle="Untitled" initialBody="" />;
+    ) : null;
 }

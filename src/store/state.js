@@ -1,4 +1,9 @@
-import { ADD_PROJECTS, ADD_SELECTED_ID } from './actions';
+import { 
+    ADD_PROJECTS, 
+    ADD_SELECTED_ID, 
+    CLOSE_EDITOR,
+    OPEN_EDITOR, 
+} from './actions';
 
 export const initialState = {
     list: [],
@@ -18,6 +23,16 @@ export function Reducer(state, action) {
         return {
             ...state,
             selectedId: action.id,
+        };
+    case OPEN_EDITOR: 
+        return {
+            ...state,
+            isEditing: true,
+        };
+    case CLOSE_EDITOR: 
+        return {
+            ...state,
+            isEditing: false,
         };
     default:
       throw new Error('Unknown action');
