@@ -1,6 +1,7 @@
 import { 
     ADD_PROJECTS, 
-    ADD_SELECTED_ID, 
+    ADD_SELECTED_ID,
+    ADD_SEARCH_TEXT,
     CLOSE_EDITOR,
     OPEN_EDITOR, 
 } from './actions';
@@ -23,6 +24,11 @@ export function Reducer(state, action) {
         return {
             ...state,
             selectedId: action.id,
+        };
+    case ADD_SEARCH_TEXT:
+        return {
+            ...state,
+            searchText: action.text,
         };
     case OPEN_EDITOR: 
         return {

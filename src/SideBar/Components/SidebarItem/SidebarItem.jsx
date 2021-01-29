@@ -10,7 +10,7 @@ export default function SidebarNote({project}) {
   const [body, setBody] = useState('');
   const { title, updatedAt } = project;
   const updatedDate = new Date(updatedAt);
-  const summary = excerpts(marked(body), {words: 20});
+  const summary = excerpts(marked(body), {words: 6});
   const [isExpanded, setIsExpanded] = useState(false);
 
   const expandItem = useCallback((expansionState) => {
