@@ -26,12 +26,14 @@ export default function ProjectEditor({initialTitle, initialBody}) {
   };
 
   useEffect(() => {
-    getProject(projectId).then(project => {
+    if (projectId) {
+      getProject(projectId).then(project => {
         const { body, title } = project;
         
         setBody(body);
         setTitle(title);
-    });
+      });
+    }
   }, [projectId]);
   
   return (
