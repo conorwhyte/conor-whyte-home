@@ -23,6 +23,7 @@ export const listProjects = /* GraphQL */ `
       items {
         id
         title
+        body
         createdAt
         updatedAt
       }

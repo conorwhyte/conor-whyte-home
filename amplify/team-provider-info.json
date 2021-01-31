@@ -1,26 +1,23 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-conorwhytehome-dev-153428-authRole",
-            "UnauthRoleArn": "arn:aws:iam::744962777212:role/amplify-conorwhytehome-dev-153428-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::744962777212:role/amplify-conorwhytehome-dev-153428-authRole",
-            "Region": "eu-west-1",
-            "DeploymentBucketName": "amplify-conorwhytehome-dev-153428-deployment",
-            "UnauthRoleName": "amplify-conorwhytehome-dev-153428-unauthRole",
-            "StackName": "amplify-conorwhytehome-dev-153428",
-            "StackId": "arn:aws:cloudformation:eu-west-1:744962777212:stack/amplify-conorwhytehome-dev-153428/599f7350-4534-11eb-90ee-0a9f2a7978c6",
-            "AmplifyAppId": "d2skhmcmnicanh"
-        },
-        "categories": {
-            "auth": {
-                "conorwhytehome7b1a3aeb": {}
-            },
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d2skhmcmnicanh",
-                    "type": "cicd"
-                }
-            }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-conorwhytehome-dev-153428-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744962777212:role/amplify-conorwhytehome-dev-153428-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744962777212:role/amplify-conorwhytehome-dev-153428-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-conorwhytehome-dev-153428-deployment",
+      "UnauthRoleName": "amplify-conorwhytehome-dev-153428-unauthRole",
+      "StackName": "amplify-conorwhytehome-dev-153428",
+      "StackId": "arn:aws:cloudformation:eu-west-1:744962777212:stack/amplify-conorwhytehome-dev-153428/599f7350-4534-11eb-90ee-0a9f2a7978c6",
+      "AmplifyAppId": "d2skhmcmnicanh"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2skhmcmnicanh",
+          "type": "cicd"
         }
+      }
     }
+  }
 }

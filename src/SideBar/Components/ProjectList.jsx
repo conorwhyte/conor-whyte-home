@@ -13,8 +13,6 @@ const ProjectList = ({ projects }) => {
         dispatch(closeEditor());
     };
 
-    console.log('CONRO');
-
     return (
         <ul className={styles.projectsList}>
             {projects.map((project) => (

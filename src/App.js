@@ -3,7 +3,6 @@ import Store from './store/StoreWrapper';
 import SidePanel from './SideBar/SidePanel';
 import Viewer from './Preview/Viewer';
 import Amplify from 'aws-amplify';
-import { withAuthenticator } from 'aws-amplify-react';
 import aws_exports from './aws-exports';
 import './App.css';
 
@@ -18,4 +17,4 @@ const App = () => (
   </div>
 );
 
-export default (withAuthenticator(App, { includeGreetings: false }));
+export default App;

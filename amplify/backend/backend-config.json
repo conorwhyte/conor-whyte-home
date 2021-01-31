@@ -1,12 +1,5 @@
 {
-  "auth": {
-    "conorwhytehome7b1a3aeb": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
+  "auth": {},
   "api": {
     "conorwhytehome": {
       "service": "AppSync",
@@ -14,9 +7,10 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authconorwhytehome7b1a3aeb"
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": "API key for projects DB"
             }
           },
           "additionalAuthenticationProviders": []
